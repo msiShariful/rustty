@@ -17,6 +17,17 @@ A GUI terminal emulator written in Rust. Opens its own native window with a shel
 - Keyboard input: printable characters, special keys, and Ctrl+A–Z
 - Spawns your default `$SHELL`
 
+## Project Structure
+
+```
+src/
+├── main.rs    — Entry point: PTY setup, reader thread, eframe launch
+├── app.rs     — TerminalApp and eframe rendering/input dispatch
+├── grid.rs    — Cell, TerminalGrid, and VTE ANSI escape sequence handling
+├── input.rs   — Keyboard-to-byte mapping (Ctrl keys, special keys)
+└── theme.rs   — Color constants and 256-color palette
+```
+
 ## Build & Run
 
 ```sh
