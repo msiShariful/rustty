@@ -1821,15 +1821,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "my-terminal"
-version = "0.1.0"
-dependencies = [
- "eframe",
- "portable-pty",
- "vte",
-]
-
-[[package]]
 name = "naga"
 version = "23.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2624,6 +2615,15 @@ dependencies = [
  "libc",
  "linux-raw-sys 0.12.1",
  "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "rustty"
+version = "0.1.0"
+dependencies = [
+ "eframe",
+ "portable-pty",
+ "vte",
 ]
 
 [[package]]

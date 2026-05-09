@@ -678,12 +678,12 @@ fn main() {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([700.0, 460.0])
-            .with_title("My Terminal"),
+            .with_title("Rustty"),
         ..Default::default()
     };
 
     eframe::run_native(
-        "My Terminal",
+        "Rustty",
         options,
         Box::new(move |_cc| Ok(Box::new(TerminalApp {
             grid,

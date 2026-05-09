@@ -1,4 +1,4 @@
-# my-terminal
+# rustty
 
 A GUI terminal emulator written in Rust. Opens its own native window with a shell session, full ANSI color support, and cursor rendering.
 
