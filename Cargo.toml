@@ -8,9 +8,11 @@ name = "Rustty"
 identifier = "com.rustty.terminal"
 category = "public.app-category.developer-tools"
 short_description = "A GPU-accelerated terminal emulator written in Rust"
+icon = ["rustty.icns"]
 osx_minimum_system_version = "10.15"
 
 [dependencies]
 eframe = "0.30"
+image = { version = "0.25.10", default-features = false, features = ["png"] }
 portable-pty = "0.8"
 vte = "0.13"

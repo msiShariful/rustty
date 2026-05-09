@@ -70,10 +70,21 @@ fn main() {
         }
     });
 
+    let icon = image::load_from_memory(include_bytes!("../rustty.png"))
+        .expect("failed to load icon")
+        .to_rgba8();
+    let (w, h) = icon.dimensions();
+    let icon_data = egui::IconData {
+        rgba: icon.into_raw(),
+        width: w,
+        height: h,
+    };
+
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_inner_size([700.0, 460.0])
-            .with_title("Rustty"),
+            .with_title("Rustty")
+            .with_icon(icon_data),
         ..Default::default()
     };
 
