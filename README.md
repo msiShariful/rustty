@@ -34,3 +34,27 @@ src/
 cargo build
 cargo run
 ```
+
+## Build macOS .dmg
+
+Requires [cargo-bundle](https://github.com/nickelc/cargo-bundle):
+
+```sh
+cargo install cargo-bundle
+```
+
+Then run the build script:
+
+```sh
+./build-dmg.sh
+```
+
+This will:
+
+1. Compile a release binary
+2. Create a `Rustty.app` bundle
+3. Package it into `Rustty.dmg`
+
+If [create-dmg](https://github.com/create-dmg/create-dmg) is installed (`brew install create-dmg`), the DMG will include a drag-to-Applications layout. Otherwise it falls back to `hdiutil`.
+
+> **Note:** The DMG is built for your current architecture (Intel or Apple Silicon). It is not code-signed or notarized, so recipients may need to right-click → Open on first launch.
