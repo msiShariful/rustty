@@ -1,15 +1,21 @@
 # my-terminal
 
-A minimal terminal emulator written in Rust.
-
-Uses a PTY (pseudo-terminal) to spawn a shell and forwards keyboard input/output between the host terminal and the child shell process.
+A GUI terminal emulator written in Rust. Opens its own native window with a shell session, full ANSI color support, and cursor rendering.
 
 ## Dependencies
 
+- **eframe** — native GUI window and rendering via egui
 - **portable-pty** — cross-platform PTY creation and management
-- **crossterm** — raw mode, keyboard events, alternate screen
-- **vte** — terminal escape sequence parsing (planned)
-- **tokio** — async runtime
+- **vte** — ANSI/VT escape sequence parsing
+
+## Features
+
+- Native GUI window (not console-based)
+- 80×24 terminal grid with block cursor
+- ANSI color support: 16 standard, 256 extended, and 24-bit true color
+- Escape sequence handling: cursor movement, erase, scroll, insert/delete, SGR styling
+- Keyboard input: printable characters, special keys, and Ctrl+A–Z
+- Spawns your default `$SHELL`
 
 ## Build & Run
 
@@ -17,5 +23,3 @@ Uses a PTY (pseudo-terminal) to spawn a shell and forwards keyboard input/output
 cargo build
 cargo run
 ```
-
-Press `Ctrl+D` or `Ctrl+C` to exit.
